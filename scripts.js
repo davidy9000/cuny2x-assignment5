@@ -13,7 +13,7 @@ function addRows() {
 
     mainGrid.appendChild(newRow);
     amountOfRows++;
-    document.getElementById("rowcount").innerHTML = "Row Count: " + (amountOfRows - 1);
+    document.getElementById("rowcount").innerHTML = "Row Count: " + amountOfRows;
 }
 
 //  remove row from grid
@@ -23,10 +23,12 @@ function removeRows(){
 
     if(cellRemove === null) {
         console.log("No more cells!");
-    } else {
+    } 
+    else {
         mainGrid.removeChild(cellRemove);
     }
     amountOfRows--;
+    document.getElementById("rowcount").innerHTML = "Row Count: " + amountOfRows;
 }
 
 function addColumns(){
