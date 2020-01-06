@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
+    <title>DOM Challenge III</title>
     <link rel="stylesheet" type = "text/css" href="styles.css" >
 </head>
 
 <body>
+    <h1 id="pagetitle">DOM Challenge III</h1>
+
     
+    <div id="rowDiv">
+        <div id="rowcount">Row Count: 1</div>
+        <button id="addRowButton" class="rowButtons" onclick="addRows()">Add Row</button>
+        <button id="removeRowButton" class="rowButtons" onclick="removeRows()">Remove Row</button>
+    </div>
+
+    <br><br>
+
+    <div id="colDiv">
+        <div id="colcount">Column Count: 1</div>
+        <button id="addColumnButton" class="colButtons" onclick="addColumns()">Add Column</button>
+        <button id="removeColumnButton" class="colButtons" onclick="removeColumns()">Remove Column</button>
+    </div>
+
+    <br><br>
+
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Pick a Color</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Red</a>
+            <a href="#">Orange</a>
+            <a href="#">Yellow</a>
+            <a href="#">Green</a>
+            <a href="#">Blue</a>
+            <a href="#">Purple</a>
+            <a href="#">Black</a>
+            <a href="#">White</a>
+            <a href="#">Gray</a>
+        </div>
+    </div> 
+
+    <br><br>
+
+    <table id="main-grid">
+        <tr>
+            <td style="background-color: whitesmoke;"></td>
+        </tr>
+    </table>
 
     <script type="text/javascript" src="scripts.js"></script>
 </body>
