@@ -1,6 +1,7 @@
 let amountOfRows = 1;
 let amountOfColumns = 1;
 let color = "red"
+let toColor = 0;
 
 //  add row to grid
 function addRows() {
@@ -11,6 +12,9 @@ function addRows() {
         let cell = document.createElement("td");
         cell.className = "white-cell"
         cell.setAttribute("onclick","changeColor(this)")
+        cell.setAttribute("onmousedown","setColorTrue(this)")
+        cell.setAttribute("onmouseover","hoverChangeColor(this)")
+        cell.setAttribute("onmouseup","setColorFalse()")
         newRow.appendChild(cell);
     }
 
@@ -54,6 +58,9 @@ function addColumns(){
             let cell = document.createElement("td");
             cell.className = "white-cell"
             cell.setAttribute("onclick","changeColor(this)")
+            cell.setAttribute("onmousedown","setColorTrue(this)")
+            cell.setAttribute("onmouseover","hoverChangeColor(this)")
+            cell.setAttribute("onmouseup","setColorFalse()")
             allRows[i].appendChild(cell);
         }
 
@@ -109,5 +116,20 @@ function clearAll(){
   cells = document.getElementsByTagName("td")
   for(i = 0; i < cells.length; i++){
     cells[i].className = "white-cell"
+  }
+}
+
+function setColorTrue(cell){
+  toColor = 1;
+  cell.className = color + "-cell"
+}
+
+function setColorFalse(){
+  toColor = 0;
+}
+
+function hoverChangeColor(cell){
+  if(toColor){
+    cell.className = color + "-cell"
   }
 }
