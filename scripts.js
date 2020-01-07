@@ -29,40 +29,68 @@ function removeRows(){
     else {
         mainGrid.removeChild(cellRemove);
     }
+
     amountOfRows--;
     document.getElementById("rowcount").innerHTML = "Row Count: " + amountOfRows;
 }
 
 //  add columns to grid
 function addColumns(){
-    let allRows = document.getElementsByTagName("tr");
-    console.log(allRows);
+    let mainGrid = document.getElementById("main-grid");
 
-    for(let i=0; i< amountOfRows; i++){
-        let cell = document.createElement("td");
-        allRows[i].appendChild(cell);
+    if(amountOfRows === 0){
+        let newRow = document.createElement("tr");
+        let newCol = document.createElement("td");
+        newRow.appendChild(newCol);
+        amountOfRows++;
+        amountOfColumns++;
+        mainGrid.appendChild(newRow);
     }
+    else{
+        let allRows = document.getElementsByTagName("tr");
 
-    amountOfColumns++;
+        for(let i=0; i< amountOfRows; i++){
+            let cell = document.createElement("td");
+            allRows[i].appendChild(cell);
+        }
+
+        amountOfColumns++;
+        document.getElementById("colcount").innerHTML = "Column Count: " + amountOfColumns;
+    }
+}
+
+//  remove columns to grid
+function removeColumns(){
+    let allRows = document.getElementsByTagName("tr");
+
+    if(allRows === null) {
+        console.log("No more cells!");
+    } 
+    else {
+        for(let i=0; i< amountOfRows; i++){
+            allRows[i].removeChild(allRows[i].lastElementChild);
+        }
+    }
+    amountOfColumns--;
     document.getElementById("colcount").innerHTML = "Column Count: " + amountOfColumns;
 }
 
-function removeColumns(){
-
-}
-
+//  changecolor
 function changeColor(cell){
   cell.className = color + "-cell"
 }
 
+//   select color
 function selectColor(){
   color = document.getElementById("myDropdown").value;
   console.log(color)
 }
 
+//   fill all
 function fillAll(){
   cells = document.getElementsByTagName("td")
   for(i = 0; i < cells.length; i++){
     cells[i].className = color + "-cell"
   }
 }
+
