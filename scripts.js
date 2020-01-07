@@ -9,6 +9,7 @@ function addRows() {
 
     for(let i=0; i< amountOfColumns; i++){
         let cell = document.createElement("td");
+        cell.className = "white-cell"
         cell.setAttribute("onclick","changeColor(this)")
         newRow.appendChild(cell);
     }
@@ -52,6 +53,13 @@ function selectColor(){
 
 function fillAll(){
   cells = document.getElementsByTagName("td")
+  for(i = 0; i < cells.length; i++){
+    cells[i].className = color + "-cell"
+  }
+}
+
+function fillEmpty(){
+  cells = document.getElementsByClassName("white-cell")
   for(i = 0; i < cells.length; i++){
     cells[i].className = color + "-cell"
   }
