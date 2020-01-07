@@ -31,8 +31,18 @@ function removeRows(){
     document.getElementById("rowcount").innerHTML = "Row Count: " + amountOfRows;
 }
 
+//  add columns to grid
 function addColumns(){
+    let allRows = document.getElementsByTagName("tr");
+    console.log(allRows);
 
+    for(let i=0; i< amountOfRows; i++){
+        let cell = document.createElement("td");
+        allRows[i].appendChild(cell);
+    }
+
+    amountOfColumns++;
+    document.getElementById("colcount").innerHTML = "Column Count: " + amountOfColumns;
 }
 
 function removeColumns(){
