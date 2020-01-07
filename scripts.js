@@ -59,3 +59,10 @@ function selectColor(){
   color = document.getElementById("myDropdown").value;
   console.log(color)
 }
+
+function fillAll(){
+  cells = document.getElementsByTagName("td")
+  for(i = 0; i < cells.length; i++){
+    cells[i].className = color + "-cell"
+  }
+}
