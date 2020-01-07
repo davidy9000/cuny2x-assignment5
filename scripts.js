@@ -52,6 +52,8 @@ function addColumns(){
 
         for(let i=0; i< amountOfRows; i++){
             let cell = document.createElement("td");
+            cell.className = "white-cell"
+            cell.setAttribute("onclick","changeColor(this)")
             allRows[i].appendChild(cell);
         }
 
@@ -66,7 +68,7 @@ function removeColumns(){
 
     if(allRows === null) {
         console.log("No more cells!");
-    } 
+    }
     else {
         for(let i=0; i< amountOfRows; i++){
             allRows[i].removeChild(allRows[i].lastElementChild);
@@ -102,4 +104,3 @@ function fillEmpty(){
     cells[i].className = color + "-cell"
   }
 }
-
