@@ -9,6 +9,7 @@ function addRows() {
 
     for(let i=0; i< amountOfColumns; i++){
         let cell = document.createElement("td");
+        cell.className = "white-cell"
         cell.setAttribute("onclick","changeColor(this)")
         newRow.appendChild(cell);
     }
@@ -51,6 +52,8 @@ function addColumns(){
 
         for(let i=0; i< amountOfRows; i++){
             let cell = document.createElement("td");
+            cell.className = "white-cell"
+            cell.setAttribute("onclick","changeColor(this)")
             allRows[i].appendChild(cell);
         }
 
@@ -65,7 +68,7 @@ function removeColumns(){
 
     if(allRows === null) {
         console.log("No more cells!");
-    } 
+    }
     else {
         for(let i=0; i< amountOfRows; i++){
             allRows[i].removeChild(allRows[i].lastElementChild);
@@ -94,3 +97,10 @@ function fillAll(){
   }
 }
 
+// fill empty
+function fillEmpty(){
+  cells = document.getElementsByClassName("white-cell")
+  for(i = 0; i < cells.length; i++){
+    cells[i].className = color + "-cell"
+  }
+}
