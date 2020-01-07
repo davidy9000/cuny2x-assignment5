@@ -85,8 +85,7 @@ function changeColor(cell){
 
 //   select color
 function selectColor(){
-  color = document.getElementById("myDropdown").value;
-  console.log(color)
+  color = document.getElementById("color").value;
 }
 
 //   fill all
@@ -99,9 +98,9 @@ function fillAll(){
 
 // fill empty
 function fillEmpty(){
-  cells = document.getElementsByClassName("white-cell")
-  for(i = 0; i < cells.length; i++){
-    cells[i].className = color + "-cell"
+  emptycells = document.getElementsByClassName("white-cell")
+  for(i = 0; i < emptycells.length; i++){
+    emptycells[i].className = color + "-cell"
   }
 }
 
