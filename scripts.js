@@ -9,6 +9,7 @@ function addRows() {
 
     for(let i=0; i< amountOfColumns; i++){
         let cell = document.createElement("td");
+        cell.setAttribute("onclick","changeColor(this)")
         newRow.appendChild(cell);
     }
 
@@ -42,4 +43,9 @@ function removeColumns(){
 
 function changeColor(cell){
   cell.className = color + "-cell"
+}
+
+function selectColor(){
+  color = document.getElementById("myDropdown").value;
+  console.log(color)
 }
