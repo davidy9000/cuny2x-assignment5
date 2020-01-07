@@ -1,5 +1,6 @@
 let amountOfRows = 1;
 let amountOfColumns = 1;
+let color = "red"
 
 //  add row to grid
 function addRows() {
@@ -23,7 +24,7 @@ function removeRows(){
 
     if(cellRemove === null) {
         console.log("No more cells!");
-    } 
+    }
     else {
         mainGrid.removeChild(cellRemove);
     }
@@ -46,5 +47,9 @@ function addColumns(){
 }
 
 function removeColumns(){
-    
+
+}
+
+function changeColor(cell){
+  cell.className = color + "-cell"
 }
