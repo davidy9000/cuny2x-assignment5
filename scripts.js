@@ -1,5 +1,6 @@
 let amountOfRows = 1;
 let amountOfColumns = 1;
+let color = "red"
 
 //  add row to grid
 function addRows() {
@@ -8,6 +9,7 @@ function addRows() {
 
     for(let i=0; i< amountOfColumns; i++){
         let cell = document.createElement("td");
+        cell.setAttribute("onclick","changeColor(this)")
         newRow.appendChild(cell);
     }
 
@@ -23,7 +25,7 @@ function removeRows(){
 
     if(cellRemove === null) {
         console.log("No more cells!");
-    } 
+    }
     else {
         mainGrid.removeChild(cellRemove);
     }
@@ -72,3 +74,23 @@ function removeColumns(){
     amountOfColumns--;
     document.getElementById("colcount").innerHTML = "Column Count: " + amountOfColumns;
 }
+
+//  changecolor
+function changeColor(cell){
+  cell.className = color + "-cell"
+}
+
+//   select color
+function selectColor(){
+  color = document.getElementById("myDropdown").value;
+  console.log(color)
+}
+
+//   fill all
+function fillAll(){
+  cells = document.getElementsByTagName("td")
+  for(i = 0; i < cells.length; i++){
+    cells[i].className = color + "-cell"
+  }
+}
+

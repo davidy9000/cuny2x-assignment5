@@ -8,7 +8,7 @@
 <body>
     <h1 id="pagetitle">DOM Challenge III</h1>
 
-    
+
     <div id="rowDiv">
         <div id="rowcount">Row Count: 1</div>
         <button id="addRowButton" class="rowButtons" onclick="addRows()">Add Row</button>
@@ -25,8 +25,14 @@
 
     <br><br>
 
+    <div id="fillAllDiv">
+        <button id="fillAll" onclick="fillAll()">Fill All Cells</button>
+    </div>
+
+    <br><br>
+
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Pick a Color</button>
+        <button onclick="selectColor()" class="dropbtn">Pick a Color</button>
         <div id="myDropdown" class="dropdown-content">
             <a href="#">Red</a>
             <a href="#">Orange</a>
@@ -36,15 +42,14 @@
             <a href="#">Purple</a>
             <a href="#">Black</a>
             <a href="#">White</a>
-            <a href="#">Gray</a>
         </div>
-    </div> 
+    </div>
 
     <br><br>
 
     <table id="main-grid">
         <tr>
-            <td></td>
+            <td class="white-cell" onclick="changeColor(this)"></td>
         </tr>
     </table>
 
