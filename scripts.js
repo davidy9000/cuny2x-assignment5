@@ -104,3 +104,11 @@ function fillEmpty(){
     cells[i].className = color + "-cell"
   }
 }
+
+// clear all
+function clearAll(){
+  cells = document.getElementsByTagName("td")
+  for(i = 0; i < cells.length; i++){
+    cells[i].className = "white-cell"
+  }
+}
